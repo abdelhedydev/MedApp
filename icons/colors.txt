@@ -1,0 +1,5 @@
+red : #d4283f
+purple : #241e40
+grey : #2F2B43
+blue : #4db8ff
+green : 92; 214; 92

@@ -1,0 +1,16 @@
+C:\Users\abdel\source\repos\MedProject\bin\Debug\MedProject.exe.config
+C:\Users\abdel\source\repos\MedProject\bin\Debug\MedProject.exe
+C:\Users\abdel\source\repos\MedProject\bin\Debug\MedProject.pdb
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.csprojAssemblyReference.cache
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Form1.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Properties.Resources.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.csproj.GenerateResource.cache
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.csproj.CoreCompileInputs.cache
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.exe
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.pdb
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Form2.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Dashboard.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.MesPatients.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Interventions.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Meeting.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Params.resources
