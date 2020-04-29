@@ -18,6 +18,8 @@ namespace MedProject
         public Form2()
         {
             InitializeComponent();
+            Dashboard buy = new Dashboard();
+            nav(buy, content);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,8 +56,7 @@ namespace MedProject
 
         private void panelLogo_Paint(object sender, PaintEventArgs e)
         {
-            Dashboard buy = new Dashboard();
-            nav(buy, content);
+            
         }
 
         public void nav(Form form, Panel panel)

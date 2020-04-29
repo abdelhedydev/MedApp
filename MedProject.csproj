@@ -70,6 +70,16 @@
     <Compile Include="Interventions.Designer.cs">
       <DependentUpon>Interventions.cs</DependentUpon>
     </Compile>
+    <Compile Include="medicalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medicalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="medicalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>medicalDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Meeting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +130,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="medicalDataSet.xsc">
+      <DependentUpon>medicalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medicalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medicalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medicalDataSet.xss">
+      <DependentUpon>medicalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="medicalDataSet1.xsc">
+      <DependentUpon>medicalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="medicalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>medicalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="medicalDataSet1.xss">
+      <DependentUpon>medicalDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

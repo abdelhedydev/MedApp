@@ -54,9 +54,10 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(12, 275);
+            this.button2.Location = new System.Drawing.Point(0, 332);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(238, 84);
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(247, 84);
             this.button2.TabIndex = 4;
             this.button2.Text = "Interventions";
             this.button2.UseVisualStyleBackColor = true;
@@ -71,9 +72,10 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 194);
+            this.button1.Location = new System.Drawing.Point(0, 231);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(238, 84);
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(247, 84);
             this.button1.TabIndex = 3;
             this.button1.Text = "Mes Rendez-vous";
             this.button1.UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@
             this.patientsBtn.ForeColor = System.Drawing.Color.White;
             this.patientsBtn.Image = ((System.Drawing.Image)(resources.GetObject("patientsBtn.Image")));
             this.patientsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.patientsBtn.Location = new System.Drawing.Point(12, 106);
+            this.patientsBtn.Location = new System.Drawing.Point(0, 122);
             this.patientsBtn.Name = "patientsBtn";
-            this.patientsBtn.Size = new System.Drawing.Size(238, 84);
+            this.patientsBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.patientsBtn.Size = new System.Drawing.Size(250, 84);
             this.patientsBtn.TabIndex = 2;
             this.patientsBtn.Text = "Mes Patients";
             this.patientsBtn.UseVisualStyleBackColor = true;
@@ -133,7 +136,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 661);
             this.panelSideMenu.TabIndex = 1;
             // 
             // button4
@@ -145,9 +148,10 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(12, 477);
+            this.button4.Location = new System.Drawing.Point(0, 574);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(238, 84);
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(250, 84);
             this.button4.TabIndex = 6;
             this.button4.Text = "Déconnexion";
             this.button4.UseVisualStyleBackColor = true;
@@ -162,9 +166,10 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(11, 361);
+            this.button3.Location = new System.Drawing.Point(0, 445);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(238, 84);
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(247, 84);
             this.button3.TabIndex = 5;
             this.button3.Text = "Paramétres";
             this.button3.UseVisualStyleBackColor = true;
@@ -180,14 +185,14 @@
             this.content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.content.Location = new System.Drawing.Point(250, 0);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(934, 561);
+            this.content.Size = new System.Drawing.Size(1134, 661);
             this.content.TabIndex = 2;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.ClientSize = new System.Drawing.Size(1384, 661);
             this.Controls.Add(this.content);
             this.Controls.Add(this.panelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

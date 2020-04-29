@@ -52,7 +52,7 @@
             this.panel4.Controls.Add(this.monnaieNumber);
             this.panel4.Controls.Add(this.label8);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(407, 233);
+            this.panel4.Location = new System.Drawing.Point(569, 328);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(342, 205);
             this.panel4.TabIndex = 25;
@@ -84,7 +84,7 @@
             this.panel3.Controls.Add(this.intervNumber);
             this.panel3.Controls.Add(this.interventiontext);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 233);
+            this.panel3.Location = new System.Drawing.Point(89, 328);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(342, 205);
             this.panel3.TabIndex = 23;
@@ -117,7 +117,7 @@
             this.panel2.Controls.Add(this.rdvNumber);
             this.panel2.Controls.Add(this.rdText);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(407, 12);
+            this.panel2.Location = new System.Drawing.Point(569, 54);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(342, 205);
             this.panel2.TabIndex = 24;
@@ -149,7 +149,7 @@
             this.panel1.Controls.Add(this.patientNumber);
             this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(89, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 205);
             this.panel1.TabIndex = 22;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
