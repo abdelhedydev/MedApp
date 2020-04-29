@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meeting));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datemeeting = new System.Windows.Forms.Label();
             this.patient = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -42,24 +43,32 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.meetingDataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.searchWord = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.patientTxt = new System.Windows.Forms.ComboBox();
+            this.dateTxt = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.hoursTxt = new System.Windows.Forms.ComboBox();
+            this.minutesTxt = new System.Windows.Forms.ComboBox();
+            this.medicalDataSet2 = new MedProject.medicalDataSet2();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientTableAdapter = new MedProject.medicalDataSet2TableAdapters.PatientTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.today = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // datemeeting
             // 
             this.datemeeting.AutoSize = true;
             this.datemeeting.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datemeeting.Location = new System.Drawing.Point(12, 9);
+            this.datemeeting.Location = new System.Drawing.Point(11, 20);
             this.datemeeting.Name = "datemeeting";
             this.datemeeting.Size = new System.Drawing.Size(46, 21);
             this.datemeeting.TabIndex = 31;
@@ -69,7 +78,7 @@
             // 
             this.patient.AutoSize = true;
             this.patient.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient.Location = new System.Drawing.Point(297, 10);
+            this.patient.Location = new System.Drawing.Point(296, 20);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(65, 21);
             this.patient.TabIndex = 29;
@@ -145,12 +154,13 @@
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(322, 45);
+            this.save.Location = new System.Drawing.Point(355, 69);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(228, 46);
             this.save.TabIndex = 35;
             this.save.Text = "Enregistrer";
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // deleteBtn
             // 
@@ -160,11 +170,12 @@
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.Location = new System.Drawing.Point(65, 128);
+            this.deleteBtn.Location = new System.Drawing.Point(76, 9);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(29, 32);
             this.deleteBtn.TabIndex = 41;
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // editBtn
             // 
@@ -174,11 +185,12 @@
             this.editBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.Location = new System.Drawing.Point(19, 128);
+            this.editBtn.Location = new System.Drawing.Point(16, 9);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(29, 32);
             this.editBtn.TabIndex = 40;
             this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // meetingDataGrid
             // 
@@ -186,15 +198,15 @@
             this.meetingDataGrid.AllowUserToDeleteRows = false;
             this.meetingDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.meetingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.meetingDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.meetingDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.meetingDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.meetingDataGrid.Location = new System.Drawing.Point(0, 177);
             this.meetingDataGrid.Name = "meetingDataGrid";
@@ -202,61 +214,46 @@
             this.meetingDataGrid.RowTemplate.Height = 25;
             this.meetingDataGrid.Size = new System.Drawing.Size(1104, 423);
             this.meetingDataGrid.TabIndex = 39;
+            this.meetingDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
+            this.meetingDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
-            this.panel2.Controls.Add(this.searchWord);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(0, 116);
+            this.panel2.Controls.Add(this.deleteBtn);
+            this.panel2.Controls.Add(this.editBtn);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(0, 127);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1104, 55);
             this.panel2.TabIndex = 42;
             // 
-            // searchWord
+            // patientTxt
             // 
-            this.searchWord.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchWord.Location = new System.Drawing.Point(854, 12);
-            this.searchWord.Name = "searchWord";
-            this.searchWord.Size = new System.Drawing.Size(188, 32);
-            this.searchWord.TabIndex = 18;
+            this.patientTxt.DataSource = this.patientBindingSource;
+            this.patientTxt.DisplayMember = "name";
+            this.patientTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientTxt.FormattingEnabled = true;
+            this.patientTxt.Location = new System.Drawing.Point(379, 20);
+            this.patientTxt.Name = "patientTxt";
+            this.patientTxt.Size = new System.Drawing.Size(204, 29);
+            this.patientTxt.TabIndex = 43;
+            this.patientTxt.ValueMember = "id";
             // 
-            // button1
+            // dateTxt
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1053, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 32);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(368, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 21);
-            this.comboBox1.TabIndex = 43;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(77, 9);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 28);
-            this.dateTimePicker1.TabIndex = 44;
+            this.dateTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTxt.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTxt.Location = new System.Drawing.Point(76, 20);
+            this.dateTxt.Name = "dateTxt";
+            this.dateTxt.Size = new System.Drawing.Size(200, 28);
+            this.dateTxt.TabIndex = 44;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 58);
+            this.label1.Location = new System.Drawing.Point(10, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 21);
             this.label1.TabIndex = 33;
@@ -265,18 +262,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(124, 58);
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(136, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 21);
+            this.label2.Size = new System.Drawing.Size(25, 31);
             this.label2.TabIndex = 47;
             this.label2.Text = "/";
             // 
-            // comboBox2
+            // hoursTxt
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.hoursTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoursTxt.FormattingEnabled = true;
+            this.hoursTxt.Items.AddRange(new object[] {
             "9",
             "10",
             "11",
@@ -286,24 +283,76 @@
             "15",
             "16",
             "17"});
-            this.comboBox2.Location = new System.Drawing.Point(76, 55);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(42, 29);
-            this.comboBox2.TabIndex = 48;
+            this.hoursTxt.Location = new System.Drawing.Point(75, 66);
+            this.hoursTxt.Name = "hoursTxt";
+            this.hoursTxt.Size = new System.Drawing.Size(42, 29);
+            this.hoursTxt.TabIndex = 48;
             // 
-            // comboBox3
+            // minutesTxt
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.minutesTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minutesTxt.FormattingEnabled = true;
+            this.minutesTxt.Items.AddRange(new object[] {
             "00",
             "15",
             "30",
             "45"});
-            this.comboBox3.Location = new System.Drawing.Point(147, 55);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(33, 29);
-            this.comboBox3.TabIndex = 49;
+            this.minutesTxt.Location = new System.Drawing.Point(183, 66);
+            this.minutesTxt.Name = "minutesTxt";
+            this.minutesTxt.Size = new System.Drawing.Size(44, 29);
+            this.minutesTxt.TabIndex = 49;
+            // 
+            // medicalDataSet2
+            // 
+            this.medicalDataSet2.DataSetName = "medicalDataSet2";
+            this.medicalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "Patient";
+            this.patientBindingSource.DataSource = this.medicalDataSet2;
+            // 
+            // patientTableAdapter
+            // 
+            this.patientTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.patientTxt);
+            this.panel1.Controls.Add(this.patient);
+            this.panel1.Controls.Add(this.minutesTxt);
+            this.panel1.Controls.Add(this.dateTxt);
+            this.panel1.Controls.Add(this.hoursTxt);
+            this.panel1.Controls.Add(this.save);
+            this.panel1.Controls.Add(this.datemeeting);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(0, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1104, 128);
+            this.panel1.TabIndex = 50;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.today);
+            this.panel3.Location = new System.Drawing.Point(956, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(124, 41);
+            this.panel3.TabIndex = 51;
+            // 
+            // today
+            // 
+            this.today.AutoSize = true;
+            this.today.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.today.Location = new System.Drawing.Point(3, 7);
+            this.today.Name = "today";
+            this.today.Size = new System.Drawing.Size(111, 25);
+            this.today.TabIndex = 0;
+            this.today.Text = "Aujourd\'hui";
+            this.today.UseVisualStyleBackColor = true;
+            this.today.CheckedChanged += new System.EventHandler(this.today_CheckedChanged);
             // 
             // Meeting
             // 
@@ -311,32 +360,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1104, 600);
             this.ControlBox = false;
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.patient);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.deleteBtn);
-            this.Controls.Add(this.editBtn);
             this.Controls.Add(this.meetingDataGrid);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.datemeeting);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.save);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Meeting";
             this.Text = "Meeting";
+            this.Load += new System.EventHandler(this.Meeting_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -353,13 +397,17 @@
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.DataGridView meetingDataGrid;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox searchWord;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox patientTxt;
+        private System.Windows.Forms.DateTimePicker dateTxt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox hoursTxt;
+        private System.Windows.Forms.ComboBox minutesTxt;
+        private medicalDataSet2 medicalDataSet2;
+        private System.Windows.Forms.BindingSource patientBindingSource;
+        private medicalDataSet2TableAdapters.PatientTableAdapter patientTableAdapter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.CheckBox today;
     }
 }
