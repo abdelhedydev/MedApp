@@ -30,6 +30,7 @@ namespace MedProject
 
             deleteBtn.Hide();
             editBtn.Hide();
+            reset.Hide();
 
             meetingDataGrid.BorderStyle = BorderStyle.None;
             meetingDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
@@ -50,7 +51,7 @@ namespace MedProject
             string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(constring))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,CONCAT(hours,':',minutes) as Heure,date as 'Date'  " +
+                using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,CONCAT(hours,':',minutes) as Heure,meet.date as 'Date'  " +
                     "FROM patient right join meeting meet on patient.id = meet.patient_id", con))
                 {
                     cmd.CommandType = CommandType.Text;
@@ -183,12 +184,12 @@ namespace MedProject
 
         private void today_CheckedChanged(object sender, EventArgs e)
         {
-            if (today.Checked)
+            /*if (today.Checked)
             {
                 string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
                 using (SqlConnection con = new SqlConnection(constring))
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,date as 'Date',CONCAT(hours,':',minutes) as Heure  " +
+                    using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,meet.date as 'Date',CONCAT(hours,':',minutes) as Heure  " +
                         "FROM patient, meeting meet where patient.id = meet.patient_id and meet.date like '" + DateTime.Today.ToString("yyyy-MM-dd") + "'", con))
                     {
                         cmd.CommandType = CommandType.Text;
@@ -210,7 +211,68 @@ namespace MedProject
             else
             {
                 this.BindMeetingDataGrid();
+            }*/
+        }
+
+        private void search(object sender, EventArgs e)
+        {
+            reset.Show();
+            if (today.Checked)
+            {
+                string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
+                using (SqlConnection con = new SqlConnection(constring))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,meet.date as 'Date',CONCAT(hours,':',minutes) as Heure  " +
+                        "FROM patient, meeting meet where patient.id = meet.patient_id and meet.patient_id = '" + Int32.Parse(patientTxt.SelectedValue.ToString()) + "'" +
+                        "and meet.date like '" + DateTime.Today.ToString("yyyy-MM-dd") + "'", con))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                meetingDataGrid.DataSource = dt;
+                                meetingDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                                patientCount.Text = meetingDataGrid.RowCount.ToString();
+
+
+                            }
+                        }
+                    }
+                }
             }
+            else
+            {
+                string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
+                using (SqlConnection con = new SqlConnection(constring))
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,meet.date as 'Date',CONCAT(hours,':',minutes) as Heure  " +
+                        "FROM patient, meeting meet where patient.id = meet.patient_id and meet.patient_id = '" + Int32.Parse(patientTxt.SelectedValue.ToString()) + "'", con))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                meetingDataGrid.DataSource = dt;
+                                meetingDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                                patientCount.Text = meetingDataGrid.RowCount.ToString();
+
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void resetFilter(object sender, EventArgs e)
+        {
+            this.BindMeetingDataGrid();
+            reset.Hide();
+            today.Checked = false;
         }
     }
 }

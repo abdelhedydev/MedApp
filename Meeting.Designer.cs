@@ -43,25 +43,28 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.meetingDataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.reset = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.medicalDataSet2 = new MedProject.medicalDataSet2();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.today = new System.Windows.Forms.CheckBox();
             this.patientTxt = new System.Windows.Forms.ComboBox();
             this.dateTxt = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.hoursTxt = new System.Windows.Forms.ComboBox();
             this.minutesTxt = new System.Windows.Forms.ComboBox();
-            this.medicalDataSet2 = new MedProject.medicalDataSet2();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientTableAdapter = new MedProject.medicalDataSet2TableAdapters.PatientTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.today = new System.Windows.Forms.CheckBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // datemeeting
@@ -78,7 +81,7 @@
             // 
             this.patient.AutoSize = true;
             this.patient.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient.Location = new System.Drawing.Point(296, 20);
+            this.patient.Location = new System.Drawing.Point(320, 20);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(65, 21);
             this.patient.TabIndex = 29;
@@ -141,9 +144,9 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(9, 10);
+            this.button2.Location = new System.Drawing.Point(4, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 32);
+            this.button2.Size = new System.Drawing.Size(40, 38);
             this.button2.TabIndex = 25;
             this.button2.UseVisualStyleBackColor = false;
             // 
@@ -154,7 +157,7 @@
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(355, 69);
+            this.save.Location = new System.Drawing.Point(379, 69);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(228, 46);
             this.save.TabIndex = 35;
@@ -220,7 +223,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
+            this.panel2.Controls.Add(this.reset);
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.deleteBtn);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.editBtn);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(0, 127);
@@ -228,13 +234,86 @@
             this.panel2.Size = new System.Drawing.Size(1104, 55);
             this.panel2.TabIndex = 42;
             // 
+            // reset
+            // 
+            this.reset.BackColor = System.Drawing.Color.White;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reset.ForeColor = System.Drawing.Color.White;
+            this.reset.Image = ((System.Drawing.Image)(resources.GetObject("reset.Image")));
+            this.reset.Location = new System.Drawing.Point(1064, 7);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(29, 32);
+            this.reset.TabIndex = 52;
+            this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.resetFilter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.patientBindingSource;
+            this.comboBox1.DisplayMember = "name";
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(796, 9);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(204, 29);
+            this.comboBox1.TabIndex = 50;
+            this.comboBox1.ValueMember = "id";
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataMember = "Patient";
+            this.patientBindingSource.DataSource = this.medicalDataSet2;
+            // 
+            // medicalDataSet2
+            // 
+            this.medicalDataSet2.DataSetName = "medicalDataSet2";
+            this.medicalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1009, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 32);
+            this.button1.TabIndex = 51;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.search);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.today);
+            this.panel3.Location = new System.Drawing.Point(666, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(124, 29);
+            this.panel3.TabIndex = 51;
+            // 
+            // today
+            // 
+            this.today.AutoSize = true;
+            this.today.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.today.Location = new System.Drawing.Point(7, 3);
+            this.today.Name = "today";
+            this.today.Size = new System.Drawing.Size(111, 25);
+            this.today.TabIndex = 0;
+            this.today.Text = "Aujourd\'hui";
+            this.today.UseVisualStyleBackColor = true;
+            this.today.CheckedChanged += new System.EventHandler(this.today_CheckedChanged);
+            // 
             // patientTxt
             // 
             this.patientTxt.DataSource = this.patientBindingSource;
             this.patientTxt.DisplayMember = "name";
             this.patientTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientTxt.FormattingEnabled = true;
-            this.patientTxt.Location = new System.Drawing.Point(379, 20);
+            this.patientTxt.Location = new System.Drawing.Point(403, 20);
             this.patientTxt.Name = "patientTxt";
             this.patientTxt.Size = new System.Drawing.Size(204, 29);
             this.patientTxt.TabIndex = 43;
@@ -302,16 +381,6 @@
             this.minutesTxt.Size = new System.Drawing.Size(44, 29);
             this.minutesTxt.TabIndex = 49;
             // 
-            // medicalDataSet2
-            // 
-            this.medicalDataSet2.DataSetName = "medicalDataSet2";
-            this.medicalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataMember = "Patient";
-            this.patientBindingSource.DataSource = this.medicalDataSet2;
-            // 
             // patientTableAdapter
             // 
             this.patientTableAdapter.ClearBeforeFill = true;
@@ -333,27 +402,6 @@
             this.panel1.Size = new System.Drawing.Size(1104, 128);
             this.panel1.TabIndex = 50;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.today);
-            this.panel3.Location = new System.Drawing.Point(956, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(124, 41);
-            this.panel3.TabIndex = 51;
-            // 
-            // today
-            // 
-            this.today.AutoSize = true;
-            this.today.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.today.Location = new System.Drawing.Point(3, 7);
-            this.today.Name = "today";
-            this.today.Size = new System.Drawing.Size(111, 25);
-            this.today.TabIndex = 0;
-            this.today.Text = "Aujourd\'hui";
-            this.today.UseVisualStyleBackColor = true;
-            this.today.CheckedChanged += new System.EventHandler(this.today_CheckedChanged);
-            // 
             // Meeting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,12 +422,12 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +457,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.CheckBox today;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button reset;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

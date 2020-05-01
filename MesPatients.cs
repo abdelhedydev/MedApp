@@ -29,7 +29,7 @@ namespace MedProject
             string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(constring))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT patient.id,patient.name as 'Nom & Prenom' ,cin as Identifiant,telephone as Téléphone,adresse as Adresse,sexe as Genre, asr.name as 'Assurance' "+
+                using (SqlCommand cmd = new SqlCommand("SELECT patient.id,patient.name as 'Nom & Prenom' ,cin as Identifiant,telephone as Téléphone,adresse as Adresse,sexe as Genre,date as 'Date',antecedants, asr.name as 'Assurance' " +
                     "FROM patient left join assurance asr on patient.assurance_id = asr.id", con))
                 {
                     cmd.CommandType = CommandType.Text;
@@ -58,15 +58,16 @@ namespace MedProject
             if(save.Text == "Enregistrer")
             {
                 string query = "INSERT INTO Patient " +
-                            "(name, cin, adresse, age,sexe,telephone,assurance_id) " +
-                            "VALUES (@name,  @cin, @adresse,@age,@sexe,@telephone,@assurance_id) ";
+                            "(name, cin, adresse, date,sexe,telephone,antecedants,assurance_id) " +
+                            "VALUES (@name,  @cin, @adresse,@date,@sexe,@telephone,@antecedants,@assurance_id) ";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name.Text;
-                cmd.Parameters.Add("@cin", SqlDbType.VarChar, 100).Value = cinn.Text;
+                cmd.Parameters.Add("@cin", SqlDbType.VarChar, 100).Value = cin.Text;
                 cmd.Parameters.Add("@adresse", SqlDbType.VarChar).Value = patientAdr.Text;
-                cmd.Parameters.Add("@age", SqlDbType.VarChar).Value = agee.Text;
+                cmd.Parameters.Add("@antecedants", SqlDbType.VarChar).Value = antecedants.Text;
                 cmd.Parameters.Add("@sexe", SqlDbType.VarChar).Value = homme.Checked ? "H" : "F";
                 cmd.Parameters.Add("@telephone", SqlDbType.VarChar).Value = telephone.Text;
+                cmd.Parameters.Add("@date", SqlDbType.Date).Value = date.Text;
                 cmd.Parameters.Add("@assurance_id", SqlDbType.Int).Value = Int32.Parse(assurance.SelectedValue.ToString());
                 sqlConnection.Open();
                 try
@@ -84,15 +85,16 @@ namespace MedProject
             {
                 Int32 id = Convert.ToInt32(patientDataGrid.Rows[patientDataGrid.CurrentRow.Index].Cells[0].Value);
                 string query = "update Patient " +
-                            "set name=@name, cin=@cin, adresse=@adresse, age=@age,sexe=@sexe,telephone=@telephone,assurance_id=@assurance_id " +
+                            "set name=@name, cin=@cin, adresse=@adresse,sexe=@sexe,telephone=@telephone,assurance_id=@assurance_id,date=@date,antecedants=@antecedants " +
                             "where id = @id ";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name.Text;
-                cmd.Parameters.Add("@cin", SqlDbType.VarChar, 100).Value = cinn.Text;
+                cmd.Parameters.Add("@cin", SqlDbType.VarChar, 100).Value = cin.Text;
                 cmd.Parameters.Add("@adresse", SqlDbType.VarChar).Value = patientAdr.Text;
-                cmd.Parameters.Add("@age", SqlDbType.VarChar).Value = agee.Text;
                 cmd.Parameters.Add("@sexe", SqlDbType.VarChar).Value = homme.Checked ? "H" : "F";
                 cmd.Parameters.Add("@telephone", SqlDbType.VarChar).Value = telephone.Text;
+                cmd.Parameters.Add("@date", SqlDbType.Date).Value = date.Text;
+                cmd.Parameters.Add("@antecedants", SqlDbType.VarChar).Value = antecedants.Text;
                 cmd.Parameters.Add("@assurance_id", SqlDbType.Int).Value = Int32.Parse(assurance.SelectedValue.ToString());
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 sqlConnection.Open();
@@ -118,8 +120,8 @@ namespace MedProject
             name.Text = "";
             cin.Text = "";
             patientAdr.Text = "";
-            age.Text = "";
             telephone.Text = "";
+            antecedants.Text = "";
         }
 
         private void MesPatients_Load(object sender, EventArgs e)
@@ -131,6 +133,7 @@ namespace MedProject
 
             deleteBtn.Hide();
             editBtn.Hide();
+            info.Hide();
 
             patientDataGrid.BorderStyle = BorderStyle.None;
             patientDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
@@ -180,7 +183,8 @@ namespace MedProject
         {
             deleteBtn.Show();
             editBtn.Show();
-            
+            info.Show();
+
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -215,7 +219,7 @@ namespace MedProject
             Int32 id = Convert.ToInt32(patientDataGrid.Rows[patientDataGrid.CurrentRow.Index].Cells[0].Value);
             string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connection);
-            string query = "SELECT name ,cin ,telephone ,adresse,sexe,age,assurance_id FROM patient where id = @id";
+            string query = "SELECT name ,cin ,telephone ,adresse,sexe,date,antecedants,assurance_id FROM patient where id = @id";
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             sqlConnection.Open();
@@ -226,8 +230,9 @@ namespace MedProject
                     name.Text = reader["name"].ToString();
                     cin.Text = reader["cin"].ToString();
                     patientAdr.Text = reader["adresse"].ToString();
-                    age.Text = reader["age"].ToString();
+                    date.Value = DateTime.Parse(reader["date"].ToString());
                     telephone.Text = reader["telephone"].ToString();
+                    antecedants.Text = reader["antecedants"].ToString();
                     if(reader["sexe"].ToString() == "F")
                     {
                         femme.Checked = true;
@@ -263,8 +268,18 @@ namespace MedProject
                 string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
                 using (SqlConnection con = new SqlConnection(constring))
                 {
+                    /*name.Text = reader["name"].ToString();
+                    cin.Text = reader["cin"].ToString();
+                    patientAdr.Text = reader["adresse"].ToString();
+                    date.Value = DateTime.Parse(reader["date"].ToString());
+                    telephone.Text = reader["telephone"].ToString();*/
                     using (SqlCommand cmd = new SqlCommand("SELECT patient.id,patient.name as 'Nom & Prenom' ,cin as Identifiant,telephone as Téléphone,adresse as Adresse,sexe as Genre, asr.name as 'Assurance' " +
-                        "FROM patient, assurance asr where patient.assurance_id = asr.id and patient.name like '%"+ searchWord.Text + "%'", con))
+                        "FROM patient, assurance asr where patient.assurance_id = asr.id and ( patient.name like '%"+ searchWord.Text + "%'"+
+                        "or patient.cin like '%"+ searchWord.Text + "%'" +
+                        "or patient.telephone like '%" + searchWord.Text + "%'" +
+                        "or patient.adresse like '%" + searchWord.Text + "%'" +
+                        "or patient.antecedants like '%" + searchWord.Text + "%'" +
+                        "or asr.name like '%" + searchWord.Text + "%'"+")", con))
                     {
                         cmd.CommandType = CommandType.Text;
                         using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -292,6 +307,22 @@ namespace MedProject
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchWord_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void info_Click(object sender, EventArgs e)
+        {
+            Int32 id = Convert.ToInt32(patientDataGrid.Rows[patientDataGrid.CurrentRow.Index].Cells[0].Value);
+            MessageBox.Show("go to Info");
         }
     }
 }

@@ -33,7 +33,7 @@ namespace MedProject
             Int32 countMeetingDetail = (Int32)cmdMeetingDetail.ExecuteScalar();
             intervNumber.Text = this.FormatResult(countMeetingDetail);
             /* Monnaie */
-            SqlCommand cmdMonnaie = new SqlCommand("Select sum([price]) as total from MeetingDetail", con);
+            SqlCommand cmdMonnaie = new SqlCommand("Select sum([cout]) as total from MeetingDetail", con);
             float cointMonnaie = cmdMonnaie != null ? (float)cmdMonnaie.ExecuteNonQuery() : 0;
             /*MessageBox.Show(cmdMonnaie.ExecuteNonQuery().ToString());*/
             monnaieNumber.Text = cointMonnaie.ToString();
