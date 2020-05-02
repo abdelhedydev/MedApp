@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MesPatients));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.antecedants = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -38,8 +38,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.patientCount = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.assurance = new System.Windows.Forms.ListBox();
             this.assuranceBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,17 +45,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.femme = new System.Windows.Forms.RadioButton();
             this.homme = new System.Windows.Forms.RadioButton();
-            this.save = new System.Windows.Forms.Button();
-            this.telephone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.agee = new System.Windows.Forms.Label();
-            this.patientAdr = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cin = new System.Windows.Forms.TextBox();
-            this.cinn = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medicalDataSet = new MedProject.medicalDataSet();
             this.patientTableAdapter = new MedProject.medicalDataSetTableAdapters.PatientTableAdapter();
@@ -69,11 +60,18 @@
             this.assuranceTableAdapter = new MedProject.medicalDataSet1TableAdapters.AssuranceTableAdapter();
             this.patientDataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.medicalDataSet2 = new MedProject.medicalDataSet();
             this.info = new System.Windows.Forms.Button();
+            this.medicalDataSet2 = new MedProject.medicalDataSet();
+            this.label1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
+            this.cinn = new System.Windows.Forms.Label();
+            this.cin = new System.Windows.Forms.TextBox();
+            this.patientAdr = new System.Windows.Forms.TextBox();
+            this.telephone = new System.Windows.Forms.TextBox();
+            this.save = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assuranceBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
@@ -88,11 +86,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.antecedants);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.date);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.assurance);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.femme);
@@ -177,31 +175,6 @@
             this.button2.TabIndex = 25;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(975, 105);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(85, 51);
-            this.panel3.TabIndex = 27;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(9, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 32);
-            this.button5.TabIndex = 25;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
@@ -211,11 +184,12 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(48, 9);
+            this.button4.Location = new System.Drawing.Point(1062, 130);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(29, 32);
             this.button4.TabIndex = 26;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // assurance
             // 
@@ -274,29 +248,6 @@
             this.homme.Text = "Homme";
             this.homme.UseVisualStyleBackColor = true;
             // 
-            // save
-            // 
-            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(214)))), ((int)(((byte)(92)))));
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Location = new System.Drawing.Point(691, 110);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(228, 46);
-            this.save.TabIndex = 14;
-            this.save.Text = "Enregistrer";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // telephone
-            // 
-            this.telephone.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.telephone.Location = new System.Drawing.Point(465, 8);
-            this.telephone.Name = "telephone";
-            this.telephone.Size = new System.Drawing.Size(188, 28);
-            this.telephone.TabIndex = 13;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -327,14 +278,6 @@
             this.agee.TabIndex = 8;
             this.agee.Text = "Naissance";
             // 
-            // patientAdr
-            // 
-            this.patientAdr.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientAdr.Location = new System.Drawing.Point(465, 51);
-            this.patientAdr.Name = "patientAdr";
-            this.patientAdr.Size = new System.Drawing.Size(188, 28);
-            this.patientAdr.TabIndex = 7;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -344,42 +287,6 @@
             this.label2.Size = new System.Drawing.Size(79, 21);
             this.label2.TabIndex = 6;
             this.label2.Text = "Addresse";
-            // 
-            // cin
-            // 
-            this.cin.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cin.Location = new System.Drawing.Point(132, 56);
-            this.cin.Name = "cin";
-            this.cin.Size = new System.Drawing.Size(188, 28);
-            this.cin.TabIndex = 5;
-            // 
-            // cinn
-            // 
-            this.cinn.AutoSize = true;
-            this.cinn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cinn.Location = new System.Drawing.Point(11, 59);
-            this.cinn.Name = "cinn";
-            this.cinn.Size = new System.Drawing.Size(115, 21);
-            this.cinn.TabIndex = 4;
-            this.cinn.Text = "Cin / Passport";
-            // 
-            // name
-            // 
-            this.name.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(132, 15);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(188, 28);
-            this.name.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom & Prenom";
             // 
             // patientBindingSource
             // 
@@ -464,15 +371,15 @@
             this.patientDataGrid.AllowUserToDeleteRows = false;
             this.patientDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.patientDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.patientDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.patientDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.patientDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.patientDataGrid.Location = new System.Drawing.Point(0, 226);
             this.patientDataGrid.Name = "patientDataGrid";
@@ -485,7 +392,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.info);
             this.panel2.Controls.Add(this.searchWord);
             this.panel2.Controls.Add(this.button1);
@@ -494,11 +402,6 @@
             this.panel2.Size = new System.Drawing.Size(1104, 55);
             this.panel2.TabIndex = 22;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // medicalDataSet2
-            // 
-            this.medicalDataSet2.DataSetName = "medicalDataSet";
-            this.medicalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // info
             // 
@@ -514,6 +417,82 @@
             this.info.TabIndex = 23;
             this.info.UseVisualStyleBackColor = false;
             this.info.Click += new System.EventHandler(this.info_Click);
+            // 
+            // medicalDataSet2
+            // 
+            this.medicalDataSet2.DataSetName = "medicalDataSet";
+            this.medicalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nom & Prenom";
+            // 
+            // name
+            // 
+            this.name.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(132, 15);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(188, 28);
+            this.name.TabIndex = 3;
+            // 
+            // cinn
+            // 
+            this.cinn.AutoSize = true;
+            this.cinn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cinn.Location = new System.Drawing.Point(11, 59);
+            this.cinn.Name = "cinn";
+            this.cinn.Size = new System.Drawing.Size(115, 21);
+            this.cinn.TabIndex = 4;
+            this.cinn.Text = "Cin / Passport";
+            // 
+            // cin
+            // 
+            this.cin.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cin.Location = new System.Drawing.Point(132, 56);
+            this.cin.Name = "cin";
+            this.cin.Size = new System.Drawing.Size(188, 28);
+            this.cin.TabIndex = 5;
+            // 
+            // patientAdr
+            // 
+            this.patientAdr.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientAdr.Location = new System.Drawing.Point(465, 51);
+            this.patientAdr.Name = "patientAdr";
+            this.patientAdr.Size = new System.Drawing.Size(188, 28);
+            this.patientAdr.TabIndex = 7;
+            // 
+            // telephone
+            // 
+            this.telephone.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telephone.Location = new System.Drawing.Point(465, 8);
+            this.telephone.Name = "telephone";
+            this.telephone.Size = new System.Drawing.Size(188, 28);
+            this.telephone.TabIndex = 13;
+            // 
+            // save
+            // 
+            this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(214)))), ((int)(((byte)(92)))));
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.Location = new System.Drawing.Point(691, 110);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(228, 46);
+            this.save.TabIndex = 14;
+            this.save.Text = "Enregistrer";
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // MesPatients
             // 
@@ -534,7 +513,6 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.assuranceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
@@ -551,17 +529,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.TextBox telephone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label agee;
-        private System.Windows.Forms.TextBox patientAdr;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox cin;
-        private System.Windows.Forms.Label cinn;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.Label label1;
         private medicalDataSet medicalDataSet;
         private System.Windows.Forms.BindingSource patientBindingSource;
         private medicalDataSetTableAdapters.PatientTableAdapter patientTableAdapter;
@@ -580,8 +551,6 @@
         private System.Windows.Forms.DataGridView patientDataGrid;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label patientCount;
         private System.Windows.Forms.Button button2;
@@ -590,5 +559,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Button info;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.TextBox telephone;
+        private System.Windows.Forms.TextBox patientAdr;
+        private System.Windows.Forms.TextBox cin;
+        private System.Windows.Forms.Label cinn;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -33,15 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.datemeeting = new System.Windows.Forms.Label();
             this.patient = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.patientCount = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
-            this.meetingDataGrid = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reset = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -58,13 +55,14 @@
             this.minutesTxt = new System.Windows.Forms.ComboBox();
             this.patientTableAdapter = new MedProject.medicalDataSet2TableAdapters.PatientTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.meetingDataGrid = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // datemeeting
@@ -87,41 +85,12 @@
             this.patient.TabIndex = 29;
             this.patient.Text = "Patient";
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(969, 31);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 32);
-            this.button5.TabIndex = 36;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1025, 31);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 32);
-            this.button4.TabIndex = 37;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.patientCount);
             this.panel4.Controls.Add(this.button2);
-            this.panel4.Location = new System.Drawing.Point(854, 24);
+            this.panel4.Location = new System.Drawing.Point(979, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(85, 51);
             this.panel4.TabIndex = 38;
@@ -194,31 +163,6 @@
             this.editBtn.TabIndex = 40;
             this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
-            // meetingDataGrid
-            // 
-            this.meetingDataGrid.AllowUserToAddRows = false;
-            this.meetingDataGrid.AllowUserToDeleteRows = false;
-            this.meetingDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.meetingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.meetingDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.meetingDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.meetingDataGrid.Location = new System.Drawing.Point(0, 177);
-            this.meetingDataGrid.Name = "meetingDataGrid";
-            this.meetingDataGrid.ReadOnly = true;
-            this.meetingDataGrid.RowTemplate.Height = 25;
-            this.meetingDataGrid.Size = new System.Drawing.Size(1104, 423);
-            this.meetingDataGrid.TabIndex = 39;
-            this.meetingDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
-            this.meetingDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
             // 
             // panel2
             // 
@@ -390,6 +334,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.patientTxt);
             this.panel1.Controls.Add(this.patient);
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.minutesTxt);
             this.panel1.Controls.Add(this.dateTxt);
             this.panel1.Controls.Add(this.hoursTxt);
@@ -402,6 +347,31 @@
             this.panel1.Size = new System.Drawing.Size(1104, 128);
             this.panel1.TabIndex = 50;
             // 
+            // meetingDataGrid
+            // 
+            this.meetingDataGrid.AllowUserToAddRows = false;
+            this.meetingDataGrid.AllowUserToDeleteRows = false;
+            this.meetingDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.meetingDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.meetingDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
+            this.meetingDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.meetingDataGrid.Location = new System.Drawing.Point(0, 177);
+            this.meetingDataGrid.Name = "meetingDataGrid";
+            this.meetingDataGrid.ReadOnly = true;
+            this.meetingDataGrid.RowTemplate.Height = 25;
+            this.meetingDataGrid.Size = new System.Drawing.Size(1104, 423);
+            this.meetingDataGrid.TabIndex = 39;
+            this.meetingDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
+            this.meetingDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
+            // 
             // Meeting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,9 +380,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.meetingDataGrid);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Meeting";
@@ -420,7 +387,6 @@
             this.Load += new System.EventHandler(this.Meeting_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).EndInit();
@@ -428,6 +394,7 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.meetingDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,15 +402,12 @@
         #endregion
         private System.Windows.Forms.Label datemeeting;
         private System.Windows.Forms.Label patient;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label patientCount;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.DataGridView meetingDataGrid;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox patientTxt;
         private System.Windows.Forms.DateTimePicker dateTxt;
@@ -460,5 +424,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView meetingDataGrid;
     }
 }

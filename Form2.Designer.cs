@@ -182,6 +182,7 @@
             // 
             // content
             // 
+            this.content.AutoScroll = true;
             this.content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.content.Location = new System.Drawing.Point(250, 0);
             this.content.Name = "content";
@@ -192,6 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1384, 661);
             this.Controls.Add(this.content);
             this.Controls.Add(this.panelSideMenu);

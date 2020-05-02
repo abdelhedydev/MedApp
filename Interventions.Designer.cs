@@ -48,11 +48,12 @@
             this.medicalDataSet2 = new MedProject.medicalDataSet();
             this.meetingDetailGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.info = new System.Windows.Forms.Button();
             this.remarqueTxt = new System.Windows.Forms.TextBox();
             this.coutTxt = new System.Windows.Forms.TextBox();
             this.intervCombo = new System.Windows.Forms.ComboBox();
-            this.interventionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medicalDataSet9 = new MedProject.medicalDataSet9();
+            this.interventionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.medicalDataSet10 = new MedProject.medicalDataSet10();
             this.co = new System.Windows.Forms.Label();
             this.interventionTxt = new System.Windows.Forms.Label();
             this.dentCombo = new System.Windows.Forms.ComboBox();
@@ -61,6 +62,8 @@
             this.agee = new System.Windows.Forms.Label();
             this.partieeee = new System.Windows.Forms.Label();
             this.patientTxt = new System.Windows.Forms.Label();
+            this.interventionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.medicalDataSet9 = new MedProject.medicalDataSet9();
             this.panel2 = new System.Windows.Forms.Panel();
             this.medicalDataSet3 = new MedProject.medicalDataSet3();
             this.meetingDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,10 +76,7 @@
             this.medicalDataSet7 = new MedProject.medicalDataSet7();
             this.medicalDataSet7BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.interventionTableAdapter = new MedProject.medicalDataSet9TableAdapters.InterventionTableAdapter();
-            this.medicalDataSet10 = new MedProject.medicalDataSet10();
-            this.interventionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.interventionTableAdapter1 = new MedProject.medicalDataSet10TableAdapters.InterventionTableAdapter();
-            this.info = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assuranceBindingSource)).BeginInit();
@@ -86,6 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meetingDetailGrid)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet3)).BeginInit();
@@ -96,8 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientMeetingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet7BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // patientBindingSource
@@ -277,6 +277,21 @@
             this.panel1.Size = new System.Drawing.Size(1104, 176);
             this.panel1.TabIndex = 23;
             // 
+            // info
+            // 
+            this.info.BackColor = System.Drawing.Color.White;
+            this.info.FlatAppearance.BorderSize = 0;
+            this.info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.info.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.info.ForeColor = System.Drawing.Color.White;
+            this.info.Image = ((System.Drawing.Image)(resources.GetObject("info.Image")));
+            this.info.Location = new System.Drawing.Point(621, 5);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(29, 32);
+            this.info.TabIndex = 28;
+            this.info.UseVisualStyleBackColor = false;
+            this.info.Click += new System.EventHandler(this.info_Click);
+            // 
             // remarqueTxt
             // 
             this.remarqueTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -307,15 +322,15 @@
             this.intervCombo.ValueMember = "id";
             this.intervCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
-            // interventionBindingSource
+            // interventionBindingSource1
             // 
-            this.interventionBindingSource.DataMember = "Intervention";
-            this.interventionBindingSource.DataSource = this.medicalDataSet9;
+            this.interventionBindingSource1.DataMember = "Intervention";
+            this.interventionBindingSource1.DataSource = this.medicalDataSet10;
             // 
-            // medicalDataSet9
+            // medicalDataSet10
             // 
-            this.medicalDataSet9.DataSetName = "medicalDataSet9";
-            this.medicalDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.medicalDataSet10.DataSetName = "medicalDataSet10";
+            this.medicalDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // co
             // 
@@ -404,6 +419,16 @@
             this.patientTxt.TabIndex = 0;
             this.patientTxt.Text = "Patient";
             // 
+            // interventionBindingSource
+            // 
+            this.interventionBindingSource.DataMember = "Intervention";
+            this.interventionBindingSource.DataSource = this.medicalDataSet9;
+            // 
+            // medicalDataSet9
+            // 
+            this.medicalDataSet9.DataSetName = "medicalDataSet9";
+            this.medicalDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
@@ -464,34 +489,9 @@
             // 
             this.interventionTableAdapter.ClearBeforeFill = true;
             // 
-            // medicalDataSet10
-            // 
-            this.medicalDataSet10.DataSetName = "medicalDataSet10";
-            this.medicalDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // interventionBindingSource1
-            // 
-            this.interventionBindingSource1.DataMember = "Intervention";
-            this.interventionBindingSource1.DataSource = this.medicalDataSet10;
-            // 
             // interventionTableAdapter1
             // 
             this.interventionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // info
-            // 
-            this.info.BackColor = System.Drawing.Color.White;
-            this.info.FlatAppearance.BorderSize = 0;
-            this.info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.info.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.info.ForeColor = System.Drawing.Color.White;
-            this.info.Image = ((System.Drawing.Image)(resources.GetObject("info.Image")));
-            this.info.Location = new System.Drawing.Point(614, 5);
-            this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(29, 32);
-            this.info.TabIndex = 28;
-            this.info.UseVisualStyleBackColor = false;
-            this.info.Click += new System.EventHandler(this.info_Click);
             // 
             // Interventions
             // 
@@ -519,6 +519,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.meetingDetailGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet3)).EndInit();
@@ -529,8 +531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.patientMeetingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet7BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalDataSet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.interventionBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

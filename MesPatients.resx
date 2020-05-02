@@ -133,19 +133,6 @@
         vWRdtvR2RG+6QAr0r4n+Y3jGQ7B2aPbr69P9O537o6t3PaaBwAthMFQWwSlBjgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5AQcEBUyTQqpNwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFSSURBVEhL
-        7dQ9L8VQHMfxxmIymAQTFrGI2CWIwQswCoNYJCZvQBgsxOJhtNuMdiYSb4DR5CEWjxG+X3puTpqqtmlM
-        fskntz3n9PdP7r1pUiFtOMYFOl1oOt34SI270HR6EAZMutB0/gck/ZjFKjYiYzB5A9yLz/qsHXa10o59
-        vCEUxFZg8ga4F58N7NqD3ck2wsYzrnAZWYDJG+BefNZn7QjntpDcpTeH6HDhh5T9Deywy3O3LoSH/O6K
-        UuVHtiucbV3kDejDOgaQHdCLNQwhm9IDDuDeNSbSa83D79zrI2RTesAUXuD+Q/qpp/TzHTPIpvQAM434
-        nxFYPoe8VBpgskOKyk3lASYM+a3c1BpgBjH8fVmY2gPK5m8HhJfcsjcNxS47X705TW8esYMlLNbks7uw
-        y84TJKO4TxeaZOcIvtIFX63nuIFv2Dp89gyboDNJPgHql8wGT+dSwwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="button4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -163,11 +150,20 @@
   <metadata name="assuranceBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>844, 17</value>
   </metadata>
+  <metadata name="assuranceBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>844, 17</value>
+  </metadata>
+  <metadata name="medicalDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>701, 17</value>
+  </metadata>
   <metadata name="medicalDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>701, 17</value>
   </metadata>
   <metadata name="patientBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>154, 17</value>
+  </metadata>
+  <metadata name="medicalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="medicalDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -243,5 +239,8 @@
   </data>
   <metadata name="medicalDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
+  </metadata>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>160, 56</value>
   </metadata>
 </root>

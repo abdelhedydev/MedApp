@@ -14,3 +14,4 @@ C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.MesPatients.resource
 C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Interventions.resources
 C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Meeting.resources
 C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Params.resources
+C:\Users\abdel\source\repos\MedProject\obj\Debug\MedProject.Profile.resources

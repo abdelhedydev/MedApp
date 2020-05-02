@@ -257,7 +257,19 @@ namespace MedProject
 
         private void button5_Click(object sender, EventArgs e)
         {
+            /*string fileName = @"C:\Users\abdel\source\repos\MedProject\patientsImport.csv";
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+
+            // Display the file contents by using a foreach loop.
+            System.Console.WriteLine("Contents of WriteLines2.txt = ");
+            foreach (string line in lines)
+            {
+                string[] col = line.Split(";"); 
+                // Use a tab to indent each line of the file.
+                Console.WriteLine("\t" + line);
+            }*/
             MessageBox.Show("File is Imported");
+
         }
 
         /*Search*/
@@ -322,7 +334,42 @@ namespace MedProject
         private void info_Click(object sender, EventArgs e)
         {
             Int32 id = Convert.ToInt32(patientDataGrid.Rows[patientDataGrid.CurrentRow.Index].Cells[0].Value);
-            MessageBox.Show("go to Info");
+            Profile frm = new Profile(id,"patient");
+            frm.Show();
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Users\abdel\source\repos\MedProject\patientsExport.csv";
+
+            try
+            {
+                StreamWriter sw = new StreamWriter(fileName, false);
+                string cols = "id;name;Identifiant;telephone;adresse;genre;date;antecedants;assurance";
+                sw.WriteLine(cols);
+               
+                foreach (DataGridViewRow row in patientDataGrid.Rows)
+                {
+                   string line = row.Cells["id"].Value.ToString() + ';' +
+                        row.Cells["Nom & Prenom"].Value.ToString() + ";" +
+                        row.Cells["Identifiant"].Value.ToString() + ";" +
+                        row.Cells["Téléphone"].Value.ToString() + ';' +
+                        row.Cells["Adresse"].Value.ToString() + ';' +
+                        row.Cells["Genre"].Value.ToString() + ';' +
+                        row.Cells["Date"].Value.ToString() + ';' +
+                        row.Cells["antecedants"].Value.ToString() + ';' +
+                        row.Cells["Assurance"].Value.ToString();
+
+                    sw.WriteLine(line);
+                }
+                sw.Close();
+                MessageBox.Show("Data was Exported");
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
+        }
+
     }
 }
