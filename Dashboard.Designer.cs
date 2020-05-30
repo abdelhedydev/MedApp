@@ -52,9 +52,9 @@
             this.panel4.Controls.Add(this.monnaieNumber);
             this.panel4.Controls.Add(this.label8);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(569, 328);
+            this.panel4.Location = new System.Drawing.Point(555, 328);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(342, 205);
+            this.panel4.Size = new System.Drawing.Size(366, 205);
             this.panel4.TabIndex = 25;
             // 
             // monnaieNumber
@@ -67,6 +67,7 @@
             this.monnaieNumber.TabIndex = 19;
             this.monnaieNumber.Text = "2,500 dt";
             this.monnaieNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.monnaieNumber.Click += new System.EventHandler(this.monnaieNumber_Click);
             // 
             // label8
             // 
@@ -84,7 +85,7 @@
             this.panel3.Controls.Add(this.intervNumber);
             this.panel3.Controls.Add(this.interventiontext);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(89, 328);
+            this.panel3.Location = new System.Drawing.Point(77, 328);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(342, 205);
             this.panel3.TabIndex = 23;
@@ -117,9 +118,9 @@
             this.panel2.Controls.Add(this.rdvNumber);
             this.panel2.Controls.Add(this.rdText);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(569, 54);
+            this.panel2.Location = new System.Drawing.Point(555, 54);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(342, 205);
+            this.panel2.Size = new System.Drawing.Size(366, 205);
             this.panel2.TabIndex = 24;
             // 
             // rdvNumber
@@ -137,11 +138,11 @@
             // 
             this.rdText.AutoSize = true;
             this.rdText.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdText.Location = new System.Drawing.Point(30, 124);
+            this.rdText.Location = new System.Drawing.Point(22, 124);
             this.rdText.Name = "rdText";
-            this.rdText.Size = new System.Drawing.Size(293, 61);
+            this.rdText.Size = new System.Drawing.Size(316, 61);
             this.rdText.TabIndex = 18;
-            this.rdText.Text = "Rende-vous";
+            this.rdText.Text = "Rendez-vous";
             // 
             // panel1
             // 
@@ -149,7 +150,7 @@
             this.panel1.Controls.Add(this.patientNumber);
             this.panel1.Controls.Add(this.label2);
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(89, 54);
+            this.panel1.Location = new System.Drawing.Point(77, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(342, 205);
             this.panel1.TabIndex = 22;
@@ -179,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.ClientSize = new System.Drawing.Size(953, 600);
             this.ControlBox = false;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

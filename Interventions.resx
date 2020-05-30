@@ -197,22 +197,6 @@
   <metadata name="medicalDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>195, 95</value>
   </metadata>
-  <data name="info.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5AUBAjA3VSJcswAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHXSURBVEhL
-        rZW3SgRRFIa31DcwYsDwMIbSZzDW9ramSjCVpkKtDKWgiKFTzGDhG5hARUW/b9yVZXd29o74wwfn3pk5
-        d+akyZRRPQzCNlzCcxbtLRiAOkitWpiDD/iCc1iAiSzaF+C1d5iFGghSNzzCC4xBC5RSK4zDK/hMFyRq
-        CD7hABrcCFQjHILPGtJY+ebesAoVbqSUz6yBPoq+xJj7ib55kvN92PsxY1UJR/AA1W7kNA/GvFxYdL77
-        Y5ZUE5iTmWiFLEWrxYT+l6w0q8vIRIm13KyI/5KVp89+FzbMmUaCeiDXE1NuBMg+2dC4gUWNBNmtI3AH
-        O24EaBmuNJ5gVCNAOg89wJzqOyrP0ASnOcBEW66Za1jSCFCaA1bAPERJdpiFKM0BTtwoyY5cq6PNRRmF
-        HmDJ67PXhRViUzgVyyn0gEn4bTTlPLe9nYpxsg+G4TaLtntxaoY3mI5WWfmzsJocuXHD7hT85HxOoFAO
-        u2O4hyo38uWIddQ6cv8yrnW+DvrocCNO/iy8wZHrVAyVYfHNfdaiSVQn2CDmxGQlVVc7eI8xNywl37xQ
-        /iyc51aC8bambcbcT1/bOeM17zGhRTEPkWXWB5tgVzpbJDcpvfZbisXKZL4BBJ2DFQ06oHIAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
   <metadata name="interventionBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>696, 173</value>
   </metadata>

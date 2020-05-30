@@ -48,7 +48,6 @@
             this.medicalDataSet2 = new MedProject.medicalDataSet();
             this.meetingDetailGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.info = new System.Windows.Forms.Button();
             this.remarqueTxt = new System.Windows.Forms.TextBox();
             this.coutTxt = new System.Windows.Forms.TextBox();
             this.intervCombo = new System.Windows.Forms.ComboBox();
@@ -256,7 +255,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.info);
             this.panel1.Controls.Add(this.remarqueTxt);
             this.panel1.Controls.Add(this.coutTxt);
             this.panel1.Controls.Add(this.intervCombo);
@@ -276,21 +274,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1104, 176);
             this.panel1.TabIndex = 23;
-            // 
-            // info
-            // 
-            this.info.BackColor = System.Drawing.Color.White;
-            this.info.FlatAppearance.BorderSize = 0;
-            this.info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.info.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.info.ForeColor = System.Drawing.Color.White;
-            this.info.Image = ((System.Drawing.Image)(resources.GetObject("info.Image")));
-            this.info.Location = new System.Drawing.Point(621, 5);
-            this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(29, 32);
-            this.info.TabIndex = 28;
-            this.info.UseVisualStyleBackColor = false;
-            this.info.Click += new System.EventHandler(this.info_Click);
             // 
             // remarqueTxt
             // 
@@ -384,7 +367,7 @@
             this.patientCombo.FormattingEnabled = true;
             this.patientCombo.Location = new System.Drawing.Point(132, 8);
             this.patientCombo.Name = "patientCombo";
-            this.patientCombo.Size = new System.Drawing.Size(479, 29);
+            this.patientCombo.Size = new System.Drawing.Size(518, 29);
             this.patientCombo.TabIndex = 32;
             this.patientCombo.ValueMember = "id";
             this.patientCombo.SelectedIndexChanged += new System.EventHandler(this.patientCombo_SelectedIndexChanged);
@@ -582,6 +565,5 @@
         private medicalDataSet10 medicalDataSet10;
         private System.Windows.Forms.BindingSource interventionBindingSource1;
         private medicalDataSet10TableAdapters.InterventionTableAdapter interventionTableAdapter1;
-        private System.Windows.Forms.Button info;
     }
 }

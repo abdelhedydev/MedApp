@@ -21,6 +21,9 @@ namespace MedProject
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             InitializeComponent();
+            // FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+            textBox2.PasswordChar = '*';
         }
 
         private void label1_Click(object sender, EventArgs e)

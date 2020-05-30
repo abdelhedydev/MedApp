@@ -166,16 +166,18 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.reset);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.deleteBtn);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.editBtn);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(0, 127);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 128);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 55);
+            this.panel2.Size = new System.Drawing.Size(1104, 54);
             this.panel2.TabIndex = 42;
             // 
             // reset
@@ -186,7 +188,7 @@
             this.reset.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reset.ForeColor = System.Drawing.Color.White;
             this.reset.Image = ((System.Drawing.Image)(resources.GetObject("reset.Image")));
-            this.reset.Location = new System.Drawing.Point(1064, 7);
+            this.reset.Location = new System.Drawing.Point(1066, 7);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(29, 32);
             this.reset.TabIndex = 52;
@@ -199,7 +201,7 @@
             this.comboBox1.DisplayMember = "name";
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(796, 9);
+            this.comboBox1.Location = new System.Drawing.Point(819, 9);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(204, 29);
             this.comboBox1.TabIndex = 50;
@@ -223,7 +225,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1009, 7);
+            this.button1.Location = new System.Drawing.Point(1032, 7);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(29, 32);
             this.button1.TabIndex = 51;
@@ -243,7 +245,7 @@
             // 
             this.today.AutoSize = true;
             this.today.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.today.Location = new System.Drawing.Point(7, 3);
+            this.today.Location = new System.Drawing.Point(9, 2);
             this.today.Name = "today";
             this.today.Size = new System.Drawing.Size(111, 25);
             this.today.TabIndex = 0;
@@ -342,7 +344,8 @@
             this.panel1.Controls.Add(this.datemeeting);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(0, 4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1104, 128);
             this.panel1.TabIndex = 50;
@@ -362,12 +365,12 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.meetingDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.meetingDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.meetingDataGrid.Location = new System.Drawing.Point(0, 177);
+            this.meetingDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.meetingDataGrid.Location = new System.Drawing.Point(0, 182);
             this.meetingDataGrid.Name = "meetingDataGrid";
             this.meetingDataGrid.ReadOnly = true;
             this.meetingDataGrid.RowTemplate.Height = 25;
-            this.meetingDataGrid.Size = new System.Drawing.Size(1104, 423);
+            this.meetingDataGrid.Size = new System.Drawing.Size(1104, 418);
             this.meetingDataGrid.TabIndex = 39;
             this.meetingDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);
             this.meetingDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.meetingDataGrid_CellClick);

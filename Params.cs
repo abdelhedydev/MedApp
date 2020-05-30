@@ -60,8 +60,7 @@ namespace MedProject
                         using (DataTable dt = new DataTable())
                         {
                             sda.Fill(dt);
-                            asrDataGridd.DataSource = dt;
-                            asrDataGridd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                            
                         }
                     }
                 }
@@ -96,8 +95,10 @@ namespace MedProject
             deleteBtn.Hide();
             editBtn.Hide();
 
-            editAsr.Hide();
-            delAsr.Hide();
+     
+
+            intervEditBtn.Hide();
+            intervDeleteBtn.Hide();
 
             usersDataGrid.BorderStyle = BorderStyle.None;
             usersDataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
@@ -110,20 +111,6 @@ namespace MedProject
             usersDataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             usersDataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             usersDataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-
-
-            asrDataGridd.BorderStyle = BorderStyle.None;
-            asrDataGridd.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(242, 242, 242);
-            asrDataGridd.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            asrDataGridd.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            asrDataGridd.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            asrDataGridd.BackgroundColor = Color.White;
-
-            asrDataGridd.EnableHeadersVisualStyles = false;
-            asrDataGridd.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            asrDataGridd.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            asrDataGridd.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
 
@@ -194,6 +181,8 @@ namespace MedProject
             save.Text = "Enregistrer";
             this.ResetInputs();
             this.UserDataGrid();
+            editBtn.Hide();
+            deleteBtn.Hide();
             sqlConnection.Close();
         }
 
@@ -206,8 +195,7 @@ namespace MedProject
 
         public void ResetInputsAsr()
         {
-            asrdetailTxt.Text = "";
-            asrNameTxt.Text = "";
+           
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
@@ -276,115 +264,23 @@ namespace MedProject
 
         private void saveAsr_Click(object sender, EventArgs e)
         {
-            string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connection);
-            if (saveAsr.Text == "Enregistrer")
-            {
-                string query = "INSERT INTO [Assurance] " +
-                            "(detail,name) " +
-                            "VALUES (@detail,@name) ";
-                SqlCommand cmd = new SqlCommand(query, sqlConnection);
-                cmd.Parameters.Add("@detail", SqlDbType.VarChar).Value = asrdetailTxt.Text;
-                cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = asrNameTxt.Text;
-                sqlConnection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Assurance Enregistré avec succées");
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                Int32 id = Convert.ToInt32(asrDataGridd.Rows[asrDataGridd.CurrentRow.Index].Cells[0].Value);
-                string query = "update [Assurance] " +
-                            "set detail=@detail,name=@name " +
-                            "where id = @id ";
-                SqlCommand cmd = new SqlCommand(query, sqlConnection);
-                cmd.Parameters.Add("@detail", SqlDbType.VarChar).Value = asrdetailTxt.Text;
-                cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = asrNameTxt.Text;
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                sqlConnection.Open();
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Assurance modifié avec succées");
-
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            save.Text = "Enregistrer";
-            this.ResetInputsAsr();
-            this.AsrDataGrid();
-            sqlConnection.Close();
+          
         }
 
         private void delAsr_Click(object sender, EventArgs e)
         {
-            Int32 id = Convert.ToInt32(asrDataGridd.Rows[asrDataGridd.CurrentRow.Index].Cells[0].Value);
-            string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connection);
-            string query = "DELETE from [Assurance] where id = @id";
-            SqlCommand cmd = new SqlCommand(query, sqlConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            sqlConnection.Open();
-            try
-            {
-                if (usersDataGrid.Rows.Count > 1)
-                {
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Assurance Supprimé avec succées");
-
-                }
-                else
-                {
-                    MessageBox.Show("Impossible de supprimer tous les assurances");
-                }
-
-                this.ResetInputsAsr();
-                this.AsrDataGrid();
-
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            sqlConnection.Close();
+       
         }
 
         private void asrDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            editAsr.Show();
-            delAsr.Show();
+            intervDeleteBtn.Show();
+            intervEditBtn.Show();
         }
 
         private void editAsr_Click(object sender, EventArgs e)
         {
-            Int32 id = Convert.ToInt32(asrDataGridd.Rows[asrDataGridd.CurrentRow.Index].Cells[0].Value);
-            string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
-            SqlConnection sqlConnection = new SqlConnection(connection);
-            string query = "SELECT detail,name from [Assurance] where id = @id";
-            SqlCommand cmd = new SqlCommand(query, sqlConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            sqlConnection.Open();
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                if (reader.Read())
-                {
-                    asrNameTxt.Text = reader["name"].ToString();
-                    asrdetailTxt.Text = reader["detail"].ToString();
-                    saveAsr.Text = "Modifier";
-                }
-            }
-            sqlConnection.Close();
+           
         }
 
         public void ResetIntervInput()
@@ -431,7 +327,7 @@ namespace MedProject
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Assurance modifié avec succées");
+                    MessageBox.Show("Intervention modifié avec succées");
 
                 }
                 catch (SqlException ex)
@@ -439,10 +335,12 @@ namespace MedProject
                     MessageBox.Show(ex.Message);
                 }
             }
-            save.Text = "Enregistrer";
+            saveInterv.Text = "Enregistrer";
             this.ResetIntervInput();
             this.IntervDataGrid();
             sqlConnection.Close();
+            intervEditBtn.Hide();
+            intervDeleteBtn.Hide();
         }
 
         private void intervDeleteBtn_Click(object sender, EventArgs e)
@@ -480,10 +378,10 @@ namespace MedProject
 
         private void intervEditBtn_Click(object sender, EventArgs e)
         {
-            Int32 id = Convert.ToInt32(asrDataGridd.Rows[asrDataGridd.CurrentRow.Index].Cells[0].Value);
+            Int32 id = Convert.ToInt32(intervDataGrid.Rows[intervDataGrid.CurrentRow.Index].Cells[0].Value);
             string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connection);
-            string query = "SELECT price,name from [Intervention] where id = @id";
+            string query = "SELECT id,price,name from [intervention] where id = @id";
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
             sqlConnection.Open();
@@ -493,10 +391,11 @@ namespace MedProject
                 {
                     intervNameTxt.Text = reader["name"].ToString();
                     intervCoutTxt.Text = reader["price"].ToString();
-                    saveAsr.Text = "Modifier";
+                    saveInterv.Text = "Modifier";
                 }
             }
             sqlConnection.Close();
+
         }
     }
 }

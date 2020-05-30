@@ -87,10 +87,8 @@ namespace MedProject
         {
             string connection = "Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connection);
-            string query = "SELECT Meet.id as 'Id',P.name as 'Title' " +
-                "FROM MeetingDetail MD inner join Meeting Meet on MD.meeting_id = Meet.id " +
-                "inner join Patient P on P.id = Meet.patient_id " +
-                "WHERE Meet.date like '" + DateTime.Today.ToString("yyyy-MM-dd") + "'";
+            string query = "SELECT Top (5) Meet.id as 'Id',P.name as 'Title' FROM Meeting Meet inner join Patient P on P.id = Meet.patient_id order BY Meet.date DESC";
+            //"WHERE Meet.date like '" + DateTime.Today.ToString("yyyy-MM-dd") + "'";
             SqlCommand cmd = new SqlCommand(query, sqlConnection);
             sqlConnection.Open();
             var dataSource = new List<PatientMeeting>();
@@ -191,6 +189,7 @@ namespace MedProject
             bool result = Int32.TryParse(meetId, out number);
             if (result)
             {
+                MessageBox.Show(number.ToString());
                 string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
                 using (SqlConnection con = new SqlConnection(constring))
                 {
@@ -340,7 +339,7 @@ namespace MedProject
 
         private void info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("aaa");
+            //MessageBox.Show("aaa");
         }
     }
 

@@ -51,7 +51,7 @@ namespace MedProject
             string constring = @"Data Source=localhost;Initial Catalog=medical;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(constring))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,CONCAT(hours,':',minutes) as Heure,meet.date as 'Date'  " +
+                using (SqlCommand cmd = new SqlCommand("SELECT meet.id as 'Id',patient.name as 'Nom & Prenom' ,CONCAT(hours,minutes) as Heure,meet.date as 'Date'  " +
                     "FROM patient right join meeting meet on patient.id = meet.patient_id", con))
                 {
                     cmd.CommandType = CommandType.Text;

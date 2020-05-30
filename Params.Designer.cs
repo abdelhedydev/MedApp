@@ -31,35 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Params));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.nameTxt = new System.Windows.Forms.TextBox();
+            this.typetxt = new System.Windows.Forms.ComboBox();
             this.save = new System.Windows.Forms.Button();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cinn = new System.Windows.Forms.Label();
             this.userNameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.typetxt = new System.Windows.Forms.ComboBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
-            this.usersDataGrid = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.nameTxt = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.delAsr = new System.Windows.Forms.Button();
-            this.editAsr = new System.Windows.Forms.Button();
-            this.aaaa = new System.Windows.Forms.Label();
-            this.asrNameTxt = new System.Windows.Forms.TextBox();
-            this.detailTxt = new System.Windows.Forms.Label();
-            this.saveAsr = new System.Windows.Forms.Button();
-            this.asrdetailTxt = new System.Windows.Forms.TextBox();
-            this.asrDataGridd = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -72,18 +58,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.saveInterv = new System.Windows.Forms.Button();
             this.intervCoutTxt = new System.Windows.Forms.TextBox();
+            this.usersDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.asrDataGridd)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervDataGrid)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,18 +85,38 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1104, 148);
+            this.panel1.Size = new System.Drawing.Size(1104, 200);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1104, 38);
-            this.panel2.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 21);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Nom";
+            // 
+            // nameTxt
+            // 
+            this.nameTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTxt.Location = new System.Drawing.Point(199, 46);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(188, 28);
+            this.nameTxt.TabIndex = 53;
+            // 
+            // typetxt
+            // 
+            this.typetxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typetxt.FormattingEnabled = true;
+            this.typetxt.Items.AddRange(new object[] {
+            "user",
+            "secretaire"});
+            this.typetxt.Location = new System.Drawing.Point(521, 94);
+            this.typetxt.Name = "typetxt";
+            this.typetxt.Size = new System.Drawing.Size(188, 29);
+            this.typetxt.TabIndex = 49;
             // 
             // save
             // 
@@ -176,6 +179,16 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Nom d\'utilisateur";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1104, 38);
+            this.panel2.TabIndex = 0;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -188,18 +201,6 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Utlisateurs";
             // 
-            // typetxt
-            // 
-            this.typetxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typetxt.FormattingEnabled = true;
-            this.typetxt.Items.AddRange(new object[] {
-            "user",
-            "secretaire"});
-            this.typetxt.Location = new System.Drawing.Point(521, 94);
-            this.typetxt.Name = "typetxt";
-            this.typetxt.Size = new System.Drawing.Size(188, 29);
-            this.typetxt.TabIndex = 49;
-            // 
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.White;
@@ -208,7 +209,7 @@
             this.deleteBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteBtn.ForeColor = System.Drawing.Color.White;
             this.deleteBtn.Image = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Image")));
-            this.deleteBtn.Location = new System.Drawing.Point(63, 12);
+            this.deleteBtn.Location = new System.Drawing.Point(60, 10);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(29, 32);
             this.deleteBtn.TabIndex = 25;
@@ -223,217 +224,22 @@
             this.editBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.Location = new System.Drawing.Point(17, 12);
+            this.editBtn.Location = new System.Drawing.Point(14, 10);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(29, 32);
             this.editBtn.TabIndex = 24;
             this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
-            // usersDataGrid
-            // 
-            this.usersDataGrid.AllowUserToAddRows = false;
-            this.usersDataGrid.AllowUserToDeleteRows = false;
-            this.usersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.usersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.usersDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
-            this.usersDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.usersDataGrid.Location = new System.Drawing.Point(0, 148);
-            this.usersDataGrid.Name = "usersDataGrid";
-            this.usersDataGrid.ReadOnly = true;
-            this.usersDataGrid.RowTemplate.Height = 25;
-            this.usersDataGrid.Size = new System.Drawing.Size(1104, 749);
-            this.usersDataGrid.TabIndex = 23;
-            this.usersDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGrid_CellClick);
-            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.deleteBtn);
             this.panel3.Controls.Add(this.editBtn);
             this.panel3.Location = new System.Drawing.Point(0, 148);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1104, 55);
             this.panel3.TabIndex = 26;
-            // 
-            // nameTxt
-            // 
-            this.nameTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTxt.Location = new System.Drawing.Point(199, 46);
-            this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(188, 28);
-            this.nameTxt.TabIndex = 53;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 21);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Nom";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(0, 289);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1104, 38);
-            this.panel4.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(24, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 21);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Assurances";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.asrDataGridd);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.aaaa);
-            this.panel5.Controls.Add(this.asrNameTxt);
-            this.panel5.Controls.Add(this.detailTxt);
-            this.panel5.Controls.Add(this.saveAsr);
-            this.panel5.Controls.Add(this.asrdetailTxt);
-            this.panel5.Location = new System.Drawing.Point(0, 327);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1104, 261);
-            this.panel5.TabIndex = 28;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
-            this.panel6.Controls.Add(this.delAsr);
-            this.panel6.Controls.Add(this.editAsr);
-            this.panel6.Location = new System.Drawing.Point(-1, 70);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1104, 55);
-            this.panel6.TabIndex = 61;
-            // 
-            // delAsr
-            // 
-            this.delAsr.BackColor = System.Drawing.Color.White;
-            this.delAsr.FlatAppearance.BorderSize = 0;
-            this.delAsr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delAsr.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delAsr.ForeColor = System.Drawing.Color.White;
-            this.delAsr.Image = ((System.Drawing.Image)(resources.GetObject("delAsr.Image")));
-            this.delAsr.Location = new System.Drawing.Point(61, 6);
-            this.delAsr.Name = "delAsr";
-            this.delAsr.Size = new System.Drawing.Size(29, 32);
-            this.delAsr.TabIndex = 25;
-            this.delAsr.UseVisualStyleBackColor = false;
-            this.delAsr.Click += new System.EventHandler(this.delAsr_Click);
-            // 
-            // editAsr
-            // 
-            this.editAsr.BackColor = System.Drawing.Color.White;
-            this.editAsr.FlatAppearance.BorderSize = 0;
-            this.editAsr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editAsr.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editAsr.ForeColor = System.Drawing.Color.White;
-            this.editAsr.Image = ((System.Drawing.Image)(resources.GetObject("editAsr.Image")));
-            this.editAsr.Location = new System.Drawing.Point(15, 6);
-            this.editAsr.Name = "editAsr";
-            this.editAsr.Size = new System.Drawing.Size(29, 32);
-            this.editAsr.TabIndex = 24;
-            this.editAsr.UseVisualStyleBackColor = false;
-            this.editAsr.Click += new System.EventHandler(this.editAsr_Click);
-            // 
-            // aaaa
-            // 
-            this.aaaa.AutoSize = true;
-            this.aaaa.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aaaa.Location = new System.Drawing.Point(46, 25);
-            this.aaaa.Name = "aaaa";
-            this.aaaa.Size = new System.Drawing.Size(129, 21);
-            this.aaaa.TabIndex = 59;
-            this.aaaa.Text = "Nom Assurance";
-            // 
-            // asrNameTxt
-            // 
-            this.asrNameTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asrNameTxt.Location = new System.Drawing.Point(197, 22);
-            this.asrNameTxt.Name = "asrNameTxt";
-            this.asrNameTxt.Size = new System.Drawing.Size(188, 28);
-            this.asrNameTxt.TabIndex = 58;
-            // 
-            // detailTxt
-            // 
-            this.detailTxt.AutoSize = true;
-            this.detailTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailTxt.Location = new System.Drawing.Point(391, 22);
-            this.detailTxt.Name = "detailTxt";
-            this.detailTxt.Size = new System.Drawing.Size(98, 21);
-            this.detailTxt.TabIndex = 55;
-            this.detailTxt.Text = "Description";
-            // 
-            // saveAsr
-            // 
-            this.saveAsr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(214)))), ((int)(((byte)(92)))));
-            this.saveAsr.FlatAppearance.BorderSize = 0;
-            this.saveAsr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveAsr.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAsr.ForeColor = System.Drawing.Color.White;
-            this.saveAsr.Location = new System.Drawing.Point(742, 18);
-            this.saveAsr.Name = "saveAsr";
-            this.saveAsr.Size = new System.Drawing.Size(228, 46);
-            this.saveAsr.TabIndex = 57;
-            this.saveAsr.Text = "Enregistrer";
-            this.saveAsr.UseVisualStyleBackColor = false;
-            this.saveAsr.Click += new System.EventHandler(this.saveAsr_Click);
-            // 
-            // asrdetailTxt
-            // 
-            this.asrdetailTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asrdetailTxt.Location = new System.Drawing.Point(519, 18);
-            this.asrdetailTxt.Multiline = true;
-            this.asrdetailTxt.Name = "asrdetailTxt";
-            this.asrdetailTxt.Size = new System.Drawing.Size(188, 46);
-            this.asrdetailTxt.TabIndex = 56;
-            // 
-            // asrDataGridd
-            // 
-            this.asrDataGridd.AllowUserToAddRows = false;
-            this.asrDataGridd.AllowUserToDeleteRows = false;
-            this.asrDataGridd.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.asrDataGridd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.asrDataGridd.DefaultCellStyle = dataGridViewCellStyle2;
-            this.asrDataGridd.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.asrDataGridd.Location = new System.Drawing.Point(0, 119);
-            this.asrDataGridd.Name = "asrDataGridd";
-            this.asrDataGridd.ReadOnly = true;
-            this.asrDataGridd.RowTemplate.Height = 25;
-            this.asrDataGridd.Size = new System.Drawing.Size(1104, 142);
-            this.asrDataGridd.TabIndex = 29;
-            this.asrDataGridd.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asrDataGrid_CellClick);
-            this.asrDataGridd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asrDataGrid_CellClick);
             // 
             // label6
             // 
@@ -449,9 +255,9 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Gray;
+            this.panel7.BackColor = System.Drawing.Color.Navy;
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Location = new System.Drawing.Point(0, 594);
+            this.panel7.Location = new System.Drawing.Point(0, 339);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1104, 38);
             this.panel7.TabIndex = 26;
@@ -466,7 +272,7 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.saveInterv);
             this.panel8.Controls.Add(this.intervCoutTxt);
-            this.panel8.Location = new System.Drawing.Point(0, 632);
+            this.panel8.Location = new System.Drawing.Point(0, 377);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1104, 261);
             this.panel8.TabIndex = 62;
@@ -477,15 +283,15 @@
             this.intervDataGrid.AllowUserToDeleteRows = false;
             this.intervDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.intervDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.intervDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.intervDataGrid.DefaultCellStyle = dataGridViewCellStyle1;
             this.intervDataGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.intervDataGrid.Location = new System.Drawing.Point(0, 112);
             this.intervDataGrid.Name = "intervDataGrid";
@@ -493,13 +299,15 @@
             this.intervDataGrid.RowTemplate.Height = 25;
             this.intervDataGrid.Size = new System.Drawing.Size(1104, 149);
             this.intervDataGrid.TabIndex = 29;
+            this.intervDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asrDataGrid_CellClick);
+            this.intervDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.asrDataGrid_CellClick);
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(67)))));
+            this.panel9.BackColor = System.Drawing.Color.White;
             this.panel9.Controls.Add(this.intervDeleteBtn);
             this.panel9.Controls.Add(this.intervEditBtn);
-            this.panel9.Location = new System.Drawing.Point(-1, 69);
+            this.panel9.Location = new System.Drawing.Point(-1, 63);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1104, 55);
             this.panel9.TabIndex = 61;
@@ -585,17 +393,39 @@
             this.intervCoutTxt.Size = new System.Drawing.Size(188, 28);
             this.intervCoutTxt.TabIndex = 56;
             // 
+            // usersDataGrid
+            // 
+            this.usersDataGrid.AllowUserToAddRows = false;
+            this.usersDataGrid.AllowUserToDeleteRows = false;
+            this.usersDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.usersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.usersDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.usersDataGrid.Location = new System.Drawing.Point(0, 200);
+            this.usersDataGrid.Name = "usersDataGrid";
+            this.usersDataGrid.ReadOnly = true;
+            this.usersDataGrid.RowTemplate.Height = 25;
+            this.usersDataGrid.Size = new System.Drawing.Size(1104, 139);
+            this.usersDataGrid.TabIndex = 23;
+            this.usersDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGrid_CellClick);
+            this.usersDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGrid_CellClick);
+            // 
             // Params
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1104, 897);
+            this.ClientSize = new System.Drawing.Size(1104, 747);
             this.ControlBox = false;
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.usersDataGrid);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -607,20 +437,14 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.asrDataGridd)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.intervDataGrid)).EndInit();
             this.panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,22 +463,9 @@
         private System.Windows.Forms.ComboBox typetxt;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.DataGridView usersDataGrid;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button delAsr;
-        private System.Windows.Forms.Button editAsr;
-        private System.Windows.Forms.Label aaaa;
-        private System.Windows.Forms.TextBox asrNameTxt;
-        private System.Windows.Forms.Label detailTxt;
-        private System.Windows.Forms.Button saveAsr;
-        private System.Windows.Forms.TextBox asrdetailTxt;
-        private System.Windows.Forms.DataGridView asrDataGridd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
@@ -667,5 +478,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button saveInterv;
         private System.Windows.Forms.TextBox intervCoutTxt;
+        private System.Windows.Forms.DataGridView usersDataGrid;
     }
 }

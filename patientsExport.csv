@@ -5,4 +5,4 @@ id;name;Identifiant;telephone;adresse;genre;date;antecedants;assurance
 4;ahlem ;Cin / Passport;98546123;Montfleury;F;12/10/2020 12:00:00 AM;;CNSS
 21;Ahmed;Cin / Passport;98456321;beb Souika;H;12/10/2020 12:00:00 AM;;CNRPS
 24;aaa;1212;12;aa;H;17/04/2020 12:00:00 AM;aaaa;CNRPS
-25;Bilel;121212;20123321;Nasser 2;H;14/05/2020 12:00:00 AM;vide;CNSS
+25;Bilel;121212;20123321;Nasser 2;H;14/05/2020 12:00:00 AM;test;CNSS

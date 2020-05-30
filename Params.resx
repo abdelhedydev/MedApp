@@ -147,35 +147,6 @@
         gg==
 </value>
   </data>
-  <data name="delAsr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5AQbFToUFgfu9QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAG/SURBVEhL
-        7VU7S8NQGO2ggwiKiI9BEGofN62tYAepNLmJlfp7BH+FoAjODoKLCIKgooK4ORWhubl1KIquIg51kFZ8
-        nK/c0Jo+bDP3wIHzJd89J7l5fIFOuGfZcUfj5w7jVfDHw4pkxqmdyIyp9t4Bk20KKEStqB3JBBtJx3D+
-        Ump8U7V3h3xwdZSuigiDawSsu7WXgpkbkvErty6FlkaUTTPoqmAoQe9W9ETBuChqK7PKtg6c3CfSvjde
-        ZS+ktbirA2zbnrKtQ2j8UGrmjip9w2HGLoWoso6ipi/iDl7BMvjmk2U8kxcnYi0o27+wmZFAU8VmVsoP
-        sfZTxvWYsmuGHTEZmj5UWYOMWfEb0xyo6bg5LeazU6TzqdSg1wxrq0XNCKuyGS0DGH+0GU+Txrkt972X
-        ETODukTaha8A1M8yxnXS9BJQCGk8SJPCSbvoB/QD+gH+A57oqyXdGIB/D4d+IO3CZ4C1djuTHiItwoZG
-        PaQLydywYEaOtIv/AzA00PRNg0Md6hr0E8Tar45jk4CBcYG9PaZft3fQt6OI6kmYn4goP1M27VGYW55E
-        8xH4Dracuy1Ypol4F9InlI1CIPALEo7zO8aL/UIAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="editAsr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5AQbFTkngvrcIAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFbSURBVEhL
-        7ZQxTsMwFIYzAQdAnIgdkGBgILZgjriAHQUxwIziICZ2ujFUnKESAg4BrFCgYgnlvfQHGdfg1OnIJ/1S
-        5Lz32bXdJDHsFKcrQleHQpkboc0rZUTPd6mqVlEST6rMJgmHlLGTOs3LNZTFAfmHI27kUpe7KItjsi3+
-        lXeWM82eT8vHUlUZSn5A4+sznUmqq1vvBJ7Vi9zs0buaezAUhhpebLGVHkoaeEIaq/FuhOEwVPyGJjfv
-        lB6vmi7BPj1/yTnPaA/D99xqbBdlrtH+N1l2skgNgylBIDI3BRS/A3nfbW6Rp+3ibBkaPx3kNV9TaPx0
-        WTl9Mjag8dNSPsB/g2/XkA9U6PIguC1bxcUCNVxC4o3U1ZUszpfQ0p5/uZeWB9rnOrTMhszLY4/QTryc
-        IcGjI/xO9LbYkOjBFXPmImdSbY48E3TbFhu+QTgH/iX3POHc5EmSfAKEj1K9X00/mgAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <data name="intervDeleteBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6

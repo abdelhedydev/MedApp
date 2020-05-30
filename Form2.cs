@@ -18,6 +18,7 @@ namespace MedProject
         public Form2()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             Dashboard buy = new Dashboard();
             nav(buy, content);
         }

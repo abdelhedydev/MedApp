@@ -33,10 +33,8 @@ namespace MedProject
             Int32 countMeetingDetail = (Int32)cmdMeetingDetail.ExecuteScalar();
             intervNumber.Text = this.FormatResult(countMeetingDetail);
             /* Monnaie */
-            SqlCommand cmdMonnaie = new SqlCommand("Select sum([cout]) as total from MeetingDetail", con);
-            float cointMonnaie = cmdMonnaie != null ? (float)cmdMonnaie.ExecuteNonQuery() : 0;
-            /*MessageBox.Show(cmdMonnaie.ExecuteNonQuery().ToString());*/
-            monnaieNumber.Text = cointMonnaie.ToString();
+            SqlCommand cmdMoney = new SqlCommand("Select sum(cout) as total from MeetingDetail", con);
+            monnaieNumber.Text = cmdMoney.ExecuteScalar().ToString()+ ' '+"dt";
         }
 
         public string FormatResult(Int32 val)
@@ -47,6 +45,11 @@ namespace MedProject
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monnaieNumber_Click(object sender, EventArgs e)
         {
 
         }
